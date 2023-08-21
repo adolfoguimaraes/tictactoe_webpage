@@ -10,7 +10,14 @@ var mainState = {
 
         getMove: function(url_) {
 
-            game_url = url_;
+            if (url_ === '') {
+                game_url = 'https://minmax-qd8m.onrender.com/minimax/play/'
+            }
+            else {
+                game_url = url_;
+            }
+
+            
 
             $.ajax({
                 url: game_url,
@@ -28,6 +35,9 @@ var mainState = {
                 },
                 error: function () {
                     console.log("error");
+                    document.getElementById("game_message").className = "alert alert-danger";
+                    document.getElementById("game_message").innerText = "Erro de servidor. Reinicie o jogo.";
+                    document.getElementById("restart_button").style.display = '';
                 }
             });
 

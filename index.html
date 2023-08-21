@@ -39,8 +39,18 @@
                         <br />
                     </div>
                     <div class="col-lg-4" align="center">
-                        <br /><br />
-                        <input class="form-control" type="text" id="input_url" name="input_url" placeholder="Insira a url da API do jogo" value="Insira o endpoint para o servidor." /><br />
+
+
+                        <br />
+                        <fieldset>
+                            <legend>Selecione o servidor do jogo:</legend>
+                            <div>
+                                <input class="form-check-input" type="radio" id="default_server" name="server" value="default_server" checked onchange="Utils.disableInput()"> <label for="default_server">Servidor padrão</label>
+                                <input class="form-check-input" type="radio" id="own_server" name="server" value="own_server" onchange="Utils.enableInput()"> <label for="own_server">Servidor próprio</label>
+                                <input class="form-control" type="text" id="input_url" name="input_url" placeholder="Insira a url da API do jogo" disabled /><br />
+                            </div>
+                        </fieldset>
+                        
                         <div class="btn btn-primary btn-sm" onclick="mainState.getMove(document.getElementById('input_url').value);">Iniciar o jogo</div>
                         <span id="restart_button" class="btn btn-danger btn-sm" onclick="game.state.start('main');" style="display: none;">Limpar tabuleiro</span>
                     </div>
@@ -53,10 +63,10 @@
     <!-- /#wrapper -->
 
     <script src="js/phaser/phaser.min.js"></script>
-
     <script src="js/tictactoe/boot.js"></script>
     <script src="js/tictactoe/tictactoe.js"></script>
     <script src="js/tictactoe/startscreen.js"></script>
+    <script src="js/tictactoe/util.js"></script>
 
     
 
