@@ -11,7 +11,7 @@ var mainState = {
         getMove: function(url_) {
 
             if (url_ === '') {
-                game_url = 'https://minmax-qd8m.onrender.com/minimax/play/'
+                game_url = 'https://adolfoia.pythonanywhere.com/minimax/play/'
             }
             else {
                 game_url = url_;
